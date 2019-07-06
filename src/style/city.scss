@@ -16,27 +16,27 @@
   border-bottom: 1px solid $bc;
   padding-top: 0.4rem;
 
-  div {
-    width: 90%;
+
+  .input_style {
+    border-radius: 0.1rem;
+    margin-bottom: 0.4rem;
+    @include wh(90%, 1.4rem);
+    display: block;
     margin: 0 auto;
     text-align: center;
+  }
 
-    .input_style {
-      border-radius: 0.1rem;
-      margin-bottom: 0.4rem;
-      @include wh(100%, 1.4rem);
-    }
+  .city_input {
+    border: 1px solid $bc;
+    padding: 0 0.3rem;
+    @include sc(0.65rem, #333);
+    text-align: left;
+  }
 
-    .city_input {
-      border: 1px solid $bc;
-      padding: 0 0.3rem;
-      @include sc(0.65rem, #333);
-    }
-
-    .city_submit {
-      background-color: $blue;
-      @include sc(0.65rem, #fff);
-    }
+  .city_submit {
+    background-color: $blue;
+    @include sc(0.65rem, #fff);
+    margin: 0.3rem auto;
   }
 }
 
