@@ -1,15 +1,19 @@
 <template>
   <div>
     <head-top signin-up="msite">
-      <router-link :to="'/search/geohash'" class="link_search" slot="search">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" version="1.1">
-          <circle cx="8" cy="8" r="7" stroke="rgb(255,255,255)" stroke-width="1" fill="none"></circle>
-          <line x1="14" y1="14" x2="20" y2="20" style="stroke:rgb(255,255,255);stroke-width:2"></line>
-        </svg>
-      </router-link>
-      <router-link to="/home" slot="msite-title" class="msite_title">
-        <span class="title_text ellipsis">{{msiteTitle}}</span>
-      </router-link>
+      <template v-slolt:search>
+        <router-link :to="'/search/geohash'" class="link_search" slot="search">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <circle cx="8" cy="8" r="7" stroke="rgb(255,255,255)" stroke-width="1" fill="none" />
+            <line x1="14" y1="14" x2="20" y2="20" style="stroke:rgb(255,255,255);stroke-width:2" />
+          </svg>
+        </router-link>
+      </template>
+      <template #msite-title>
+        <router-link to="/home" slot="msite-title" class="msite_title">
+          <span class="title_text ellipsis">{{msiteTitle}}</span>
+        </router-link>
+      </template>
     </head-top>
     <nav class="msite_nav">
       <div class="swiper-container" v-if="foodTypes.length">
@@ -26,7 +30,7 @@
               class="link_to_food"
             >
               <figure>
-                <img :src="imgBaseUrl + foodItem.image_url">
+                <img :src="imgBaseUrl + foodItem.image_url" />
                 <figcaption>{{foodItem.title}}</figcaption>
               </figure>
             </router-link>
@@ -34,12 +38,12 @@
         </div>
         <div class="swiper-pagination"></div>
       </div>
-      <img src="../../images/fl.svg" class="fl_back animation_opactiy" v-else>
+      <img src="../../images/fl.svg" class="fl_back animation_opactiy" v-else />
     </nav>
     <div class="shop_list_container">
       <header class="shop_header">
         <svg class="shop_icon">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shop"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shop" />
         </svg>
         <span class="shop_header_title">附近商家</span>
       </header>
@@ -130,5 +134,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-	@import "../../style/msite.scss";
+@import "../../style/msite.scss";
 </style>
