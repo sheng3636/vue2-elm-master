@@ -120,7 +120,6 @@ export default {
       let urlData = decodeURIComponent(
         url.split("=")[1].replace("&target_name", "")
       );
-      console.log(urlData);
       
       if (/restaurant_category_id/gi.test(urlData)) {
         return JSON.parse(urlData).restaurant_category_id.id;
