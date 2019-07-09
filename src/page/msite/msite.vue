@@ -93,9 +93,10 @@ export default {
     //获取导航食品类型列表
     msiteFoodTypes(this.geohash)
       .then(res => {
+        let resArr = [...res]; // 返回一个新的数组
         let foodArr = [];
         for (let i = 0, j = 0; i < res.length; i += 8, j++) {
-          foodArr[j] = res.splice(0, 8);
+          foodArr[j] = resArr.splice(0, 8);
         }
         this.foodTypes = foodArr;
       })
@@ -120,7 +121,7 @@ export default {
       let urlData = decodeURIComponent(
         url.split("=")[1].replace("&target_name", "")
       );
-      
+
       if (/restaurant_category_id/gi.test(urlData)) {
         return JSON.parse(urlData).restaurant_category_id.id;
       } else {

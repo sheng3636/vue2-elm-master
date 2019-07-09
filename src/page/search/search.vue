@@ -62,6 +62,10 @@ import {imgBaseUrl} from '../../config/env'
 import {getStore, setStore} from '../../config/mUtils'
 
 export default {
+    components:{
+        headTop,
+        footGuide,
+    },
 	data(){
         return {
             geohash: '', // msite页面传递过来的地址信息
@@ -73,19 +77,12 @@ export default {
             emptyResult: false, // 搜索结果为空时显示
         }
     },
-    created(){
-       
-    },
     mounted(){
         this.geohash = this.$route.params.geohash;
         //获取搜索历史记录
         if (getStore('searchHistory')) {
             this.searchHistory = JSON.parse(getStore('searchHistory'));
         }
-    },
-    components:{
-        headTop,
-        footGuide,
     },
     methods:{
         //点击提交按钮，搜索结果并显示，同时将搜索内容存入历史记录

@@ -53,6 +53,8 @@
   border-bottom: 0.025rem solid $bc;
 
   .item_left {
+    display: flex;
+    align-items: center;
     margin-right: 0.25rem;
 
     .restaurant_img {
