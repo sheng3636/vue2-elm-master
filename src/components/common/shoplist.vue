@@ -141,9 +141,6 @@ export default {
 		//返回顶部
 		backTop(){
 			animate(document.documentElement, {scrollTop: '0'}, 400,'ease-out');
-			// console.log(window.pageYOffset);
-			
-			// window.pageYOffset = 0
 		},
 		//监听父级传来的数据发生变化时，触发此函数重新根据属性值获取数据
 		async listenPropChange(){

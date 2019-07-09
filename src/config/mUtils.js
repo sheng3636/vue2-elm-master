@@ -140,7 +140,6 @@ export const showBack = callback => {
         }else{
             callback(false);
         }
-        console.log(document.documentElement.scrollTop);
         
     }
 }
