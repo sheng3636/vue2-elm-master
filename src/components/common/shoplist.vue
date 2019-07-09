@@ -54,7 +54,6 @@
 				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#backtop"></use>
 			</svg>
 		</aside>
-		<div ref="abc" style="background-color: red;"></div>
 		<transition name="loading">
 			<loading v-show="showLoading"></loading>
 		</transition>
@@ -96,9 +95,6 @@ export default {
 		...mapState([
 			'latitude','longitude'
 		]),
-	},
-	updated(){
-		// console.log(this.supportIds, this.sortByType)
 	},
 	methods: {
 		async initData(){
