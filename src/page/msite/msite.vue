@@ -10,7 +10,7 @@
         </router-link>
       </template>
       <template #msite-title>
-        <router-link to="/home" slot="msite-title" class="msite_title">
+        <router-link to="/home" class="msite_title">
           <span class="title_text ellipsis">{{msiteTitle}}</span>
         </router-link>
       </template>
