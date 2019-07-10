@@ -1,7 +1,6 @@
 import {
   getStyle
 } from '../../config/mUtils'
-import { log } from 'util';
 
 export const loadMore = {
   directives: {
@@ -30,7 +29,7 @@ export const loadMore = {
             height = height
           }
           paddingBottom = getStyle(el, 'paddingBottom');
-					marginBottom = getStyle(el, 'marginBottom');
+					marginBottom = getStyle(el, 'marginBottom'); 
         }, false)
 
         el.addEventListener('touchmove', () => {
