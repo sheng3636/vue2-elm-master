@@ -31,6 +31,7 @@
             overflow: hidden;
             position: relative;
             height: 100%;
+            text-align: center;
         }
         .star_container{
             position: absolute;
@@ -39,6 +40,7 @@
             height: 0.4rem;
             top: -0.02rem;
             left: -0.02rem;
+            text-align: center;
             .grey_fill{
                 fill: #d1d1d1;
             }
