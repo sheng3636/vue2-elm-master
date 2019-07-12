@@ -56,7 +56,7 @@
             foodNum: function (){
                 let category_id = this.foods.category_id;
                 let item_id = this.foods.item_id;
-                if (this.shopCart&&this.shopCart[category_id]&&this.shopCart[category_id][item_id]) {
+                if (this.shopCart && this.shopCart[category_id] && this.shopCart[category_id][item_id]) {
                     let num = 0;
                     Object.values(this.shopCart[category_id][item_id]).forEach((item,index) => {
                         num += item.num;

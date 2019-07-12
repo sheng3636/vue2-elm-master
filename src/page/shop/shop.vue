@@ -68,14 +68,14 @@
             </section>
             <!-- 商铺商品列表 -->
             <transition name="fade-choose">
-                <section v-show="changeShowType =='food'" class="food_container">
+                <section v-show="changeShowType == 'food'" class="food_container">
                     <section class="menu_container">
                         <section class="menu_left" id="wrapper_menu" ref="wrapperMenu">
                             <ul>
                                 <li v-for="(item,index) in menuList" :key="index" class="menu_left_li" :class="{activity_menu: index == menuIndex}" @click="chooseMenu(index)">
                                     <img :src="getImgPath(item.icon_url)" v-if="item.icon_url">
                                     <span>{{item.name}}</span>
-                                    <span class="category_num" v-if="categoryNum[index]&&item.type==1">{{categoryNum[index]}}</span>
+                                    <span class="category_num" v-if="categoryNum[index] && item.type == 1">{{categoryNum[index]}}</span>
                                 </li>
                             </ul>
                         </section>
@@ -106,7 +106,6 @@
                                                           <p :style="{color: attribute.icon_name == '新'? '#fff' : '#' + attribute.icon_color}">{{attribute.icon_name == '新'? '新品':attribute.icon_name}}</p>
                                                         </li>
                                                     </ul>
-
                                                 </h3>
                                                 <p class="food_description_content">{{foods.description}}</p>
                                                 <p class="food_description_sale_rating">
@@ -265,7 +264,7 @@
                 <div class="specs_list" v-if="showSpecs">
                     <header class="specs_list_header">
                         <h4 class="ellipsis">{{choosedFoods.name}}</h4>
-                        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" version="1.1"class="specs_cancel" @click="showChooseList">
+                        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" version="1.1" class="specs_cancel" @click="showChooseList">
                             <line x1="0" y1="0" x2="16" y2="16"  stroke="#666" stroke-width="1.2"/>
                             <line x1="0" y1="16" x2="16" y2="0"  stroke="#666" stroke-width="1.2"/>
                         </svg>
@@ -291,13 +290,7 @@
         <transition name="fade">
             <p class="show_delete_tip" v-if="showDeleteTip">多规格商品只能去购物车删除哦</p>
         </transition>
-        <transition
-        appear
-        @after-appear = 'afterEnter'
-        @before-appear="beforeEnter"
-        v-for="(item,index) in showMoveDot"
-        :key="index"
-        >
+        <transition appear @after-appear = 'afterEnter' @before-appear="beforeEnter" v-for="(item,index) in showMoveDot" :key="index">
             <span class="move_dot" v-if="item">
                 <svg class="move_liner">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-add"></use>
