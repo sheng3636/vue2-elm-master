@@ -194,12 +194,11 @@
                     </transition>
                 </section>
             </transition>
-            <!-- 商铺评价切换内容 -->
+            <!-- 商铺评价内容 -->
             <transition name="fade-choose">
                 <section class="rating_container" id="ratingContainer" v-show="changeShowType =='rating'">
                     <section v-load-more="loaderMoreRating" type="2">
                         <section>
-
                             <header class="rating_header">
                                 <section class="rating_header_left">
                                     <p>{{shopDetailData.rating}}</p>
@@ -227,7 +226,7 @@
                                 <li v-for="(item, index) in ratingTagsList" :key="index" :class="{unsatisfied: item.unsatisfied, tagActivity: ratingTageIndex == index}" @click="changeTgeIndex(index, item.name)">{{item.name}}({{item.count}})</li>
                             </ul>
                             <ul class="rating_list_ul">
-                                <li v-for="(item, index) in ratingList" :key="index" class="rating_list_li">
+                                <li v-for="(item, index) in ratingList" :key="index" class="rating_list_li">    
                                     <img :src="getImgPath(item.avatar)" class="user_avatar">
                                     <section class="rating_list_details">
                                         <header>
@@ -647,8 +646,8 @@
                 el.style.transition = 'transform .55s cubic-bezier(0.3, -0.25, 0.7, -0.15)';
                 el.children[0].style.transition = 'transform .55s linear';
                 this.showMoveDot = this.showMoveDot.map(item => false);
-                el.children[0].style.opacity = 1;
-                el.children[0].addEventListener('transitionend', () => {
+                    el.children[0].style.opacity = 1;
+                    el.children[0].addEventListener('transitionend', () => {
                     this.listenInCart();
                 })
                 el.children[0].addEventListener('webkitAnimationEnd', () => {
